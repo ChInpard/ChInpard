@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToDoList, Modal } from "../components/index.js";
 import { useModal } from "../hooks/index.js";
 import { useGetList } from "../hooks/index.js";
-import { updatePost } from "../functions/index.js";
+import { updatePost } from "../utils/functions.js";
 
 
 export default function ToDoListPage() {

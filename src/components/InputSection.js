@@ -1,7 +1,7 @@
 import { TextInput, Button } from "./index.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { createNewPost } from "../functions/index.js";
+import { createNewPost } from "../utils/functions.js";
 import { useState } from "react";
 
 

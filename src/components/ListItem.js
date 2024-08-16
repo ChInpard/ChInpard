@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CheckBox, ToDo, Edit, Delete } from './index.js'
-import { deletePost } from '../functions/index.js';
+import { deletePost } from '../utils/functions.js';
 import { useUpdateCheckedState } from '../hooks/index.js';
 
 
