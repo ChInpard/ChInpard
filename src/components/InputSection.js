@@ -5,7 +5,7 @@ import { createNewPost } from "../functions/index.js";
 import { useState } from "react";
 
 
-export default function InputSection({ list, setList }) {
+export default function InputSection({ list, setList, setIsLoading }) {
 
     // TextInput
     const inputBgColor = '#323232';
@@ -19,6 +19,17 @@ export default function InputSection({ list, setList }) {
 
     const [ inputValue, setInputValue ] = useState("");
 
+    // const addNewToDo = () => createNewPost(inputValue, list, setList, setInputValue);
+
+    const addNewToDo = (() => {
+        setIsLoading(true);
+        setTimeout(() => {
+            createNewPost(inputValue, list, setList, setInputValue, () => {
+                setIsLoading(false);
+            });
+        }, 100);
+    });
+
 
     return (
         <div className="flex">
@@ -27,18 +38,19 @@ export default function InputSection({ list, setList }) {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyUp={(e) => {
                     if (e.key === 'Enter') {
-                        createNewPost(inputValue, list, setList, setInputValue);
+                        addNewToDo();
                     }
                 }}
                 bgColor={inputBgColor}
                 color={inputColor}
             />
             <Button 
-                onClick={() => createNewPost(inputValue, list, setList, setInputValue)}
+                onClick={() => addNewToDo()}
                 bgColor={buttonBgColor}
                 color={buttonColor}
                 content={content}
             />
         </div>
     );
+
 }

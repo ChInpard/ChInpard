@@ -10,6 +10,8 @@ export default function ListItem({ todo, list, setList, openModal }) {
 
     useUpdateCheckedState(isChecked, todo, list, setList);
 
+    const removeTodo = () => deletePost(todo.id, list, setList);
+
 
     return (
         <div className="flex justify-center items-center py-4 px-2 gap-5 border border-x-0 border-t-0 border-gainsboro hover:bg-gray-100">
@@ -32,7 +34,7 @@ export default function ListItem({ todo, list, setList, openModal }) {
             <Delete 
                 className="w-1/6" 
                 width={'w-1/12'}
-                onClick={() => deletePost(todo.id, list, setList)}
+                onClick={() => removeTodo()}
             />
         </div>
     );

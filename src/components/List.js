@@ -1,10 +1,11 @@
-import { ListItem } from "./index.js";
+import { ListItem, Loading } from "./index.js";
 
 
-export default function List({ list, setList, openModal }) {
-    
+export default function List({ list, setList, openModal, isLoading }) {
+
     return (
-        <div className="h-96 border rounded-b-2xl overflow-y-scroll">
+        <div className="h-96 border rounded-b-2xl overflow-y-scroll relative">
+            {isLoading && <Loading isLoading={isLoading}/>}
             {
                 list.map((todo, i) => (
                     <ListItem 

@@ -10,6 +10,7 @@ import ToDo from "./ToDo";
 import Edit from "./Edit";
 import Delete from "./Delete";
 import Modal from "./Modal";
+import Loading from "./Loading";
 
 
-export { Header, ToDoList, TextInput, Button, List, InputSection, ListItem, CheckBox, ToDo, Edit, Delete, Modal };
+export { Header, ToDoList, TextInput, Button, List, InputSection, ListItem, CheckBox, ToDo, Edit, Delete, Modal, Loading };

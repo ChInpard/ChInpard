@@ -22,6 +22,11 @@ export default function ToDoListPage() {
     const { isModalVisible, selectedTodo, openModal, closeModal } = useModal();
     const [ list, setList ] = useGetList("written");
 
+    const changeTodoAndCloseModal = () => { 
+        updatePost(selectedTodo.id, input, list, setList); 
+        closeModal(); 
+    };
+
 
     return (
         <div>
@@ -38,10 +43,7 @@ export default function ToDoListPage() {
                 isModalVisible={isModalVisible}
                 closeModal={closeModal}
                 selectedTodo={selectedTodo}
-                onClick={() => { 
-                    updatePost(selectedTodo.id, input, list, setList); 
-                    closeModal(); 
-                }}
+                onClick={() => changeTodoAndCloseModal()}
             />
             
             <ToDoList list={list} setList={setList} openModal={openModal} />

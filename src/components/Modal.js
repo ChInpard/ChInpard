@@ -33,8 +33,9 @@ export default function Modal({
             <ModalContainer onClick={(e) => e.stopPropagation()}>
                 <ModalTitle 
                     bgColor={modalBgColor}
-                    color={modalTextColor}>
-                        {title}
+                    color={modalTextColor}
+                >
+                    {title}
                 </ModalTitle>
                 <ModalContent
                     value={input}

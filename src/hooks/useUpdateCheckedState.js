@@ -14,7 +14,6 @@ export function useUpdateCheckedState(isChecked, todo, list, setList) {
             setList(updatedList);
             localStorage.setItem('written', JSON.stringify(updatedList));
         }
-        
     }, [isChecked, todo.id]);
 
 }

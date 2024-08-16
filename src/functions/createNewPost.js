@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
 
-export default function createNewPost(value, list, setList, setInputValue) {
+export default function createNewPost(value, list, setList, setInputValue, onComplete) {
     
     if (value) {
         const newTodo = {
@@ -10,10 +10,14 @@ export default function createNewPost(value, list, setList, setInputValue) {
             checked: false
         };
 
-        const current = [...list, newTodo];
-        localStorage.setItem("written", JSON.stringify(current));
-        setList(current);
-        setInputValue("");
+        const newList = [...list, newTodo];
+        localStorage.setItem("written", JSON.stringify(newList));
+        setList(newList);
+        setInputValue('');
+
+        if (onComplete) {
+            onComplete();
+        } 
     }
 
 }
